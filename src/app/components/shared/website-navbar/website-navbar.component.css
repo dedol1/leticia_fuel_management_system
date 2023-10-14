@@ -1,0 +1,20 @@
+#signInBtn{
+    background-color: #fff !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* color: #fff; */
+    font-weight: bold;
+    font-size: 11px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+#signInBtn:hover {
+    background-color: #fff !important;
+    color: #282828;
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0px 4px 8px #73493F !important;
+    cursor: pointer;
+    font-weight: bold;
+    transform: translateY(-0.25em);
+}
+/* signin btn */
