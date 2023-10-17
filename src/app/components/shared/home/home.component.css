@@ -1,0 +1,123 @@
+.searchIcon{
+    font-size: 24px;
+    position: relative;
+    top: -5px;
+}
+/* Search Button Icon Ends */
+
+.projectSearch {
+    background-color: #73493F !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.projectSearch:hover {
+    background-color: #73493F !important;
+    color: #fff;
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0px 4px 8px #73493F !important;
+    cursor: pointer;
+    transform: translateY(-0.25em);
+}
+/* Project Search Button Ends */
+
+.registerProject {
+    background-color: #73493F !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 2px;
+    position:relative;
+    left: 0.5%;
+}
+
+.registerProject:hover {
+    background-color: #73493F !important;
+    color: #fff;
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0px 4px 8px #73493F !important;
+    cursor: pointer;
+    transform: translateY(-0.25em);
+}
+/* Register Project Button Ends */
+
+.modal-content {
+    border-bottom: solid 3px #59231E !important;
+    border-top-left-radius: 0% !important;
+    border-top-right-radius: 0% !important;
+}
+
+/* Modal Content Styling Ends */
+
+.footerText{
+
+    font-family: var(--bs-font-sans-serif);
+    font-size: 12px;
+}
+
+/* Footer Text Styles Ends */
+
+#signImage{
+    
+}
+
+/* .footer{
+    position: relative;
+    top: 327px;
+} */
+
+.privacy{
+    position: relative;
+    left: 1%;
+}
+
+.privacyText{
+    position: relative;
+    left: 4%;
+}
+
+.terms{
+    position: relative;
+    left: 2%;
+}
+
+.submitBtn{
+    background-color: #73493F;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 2px;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.submitBtn:hover {
+    background-color: #73493F !important;
+    color: #fff;
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0px 4px 8px #73493F !important;
+    cursor: pointer;
+    transform: translateY(-0.25em);
+}
+
+.formNameText{
+    font-family: var(--bs-font-sans-serif);
+}
+
+.float-rightDol{
+    float: right;
+}
+
+.settings{
+    position: relative;
+    left: 3%;
+}
+
+.footer-bar{
+    margin-top: -20px;
+}
