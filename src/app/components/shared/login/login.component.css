@@ -1,0 +1,61 @@
+/* #signInImage{
+    background-image:url('../../../../assets/images/auth/bg.webp')
+} */
+
+.backHomeBtn{
+    background-color: #73493F !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #fff;
+}
+
+.backHomeBtn:hover{
+    background-color: #73493F !important;
+    color: #fff;
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0px 4px 8px #73493F !important;
+    cursor: pointer;
+    transform: translateY(-0.25em);
+}
+
+/* Home Back Btn Ends */
+
+#signInBtn{
+    background-color: #73493F !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#signInBtn:hover {
+    background-color: #73493F !important;
+    color: #fff;
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0px 4px 8px #73493F !important;
+    cursor: pointer;
+    transform: translateY(-0.25em);
+}
+
+/* Sign In Btn Ends */
+
+.signInGoogleBtn{
+    font-size: 11.5px;
+}
+
+/* Sign In With Google Btn Ends */
+
+/* .forgottenPassword{
+    float: right !important;
+} */
+
+/* Forgotten Password Ends */
+
+.signUpText{
+    color: #73493F !important;
+    font-size: 13px !important;
+}
+
+.signUpText:hover{
+    color: #73493F !important;
+}
