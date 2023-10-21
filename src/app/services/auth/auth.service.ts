@@ -23,6 +23,14 @@ export class AuthService {
     return this.httpClient.get<any>(this.REST_API_SERVER + 'user/' + userId + '/')
   }
 
+  clockIn(userId: any): Observable<any> {
+    return this.httpClient.get<any>(this.REST_API_SERVER + 'authentication/clock_in/' + userId + '/')
+  }
+
+  clockOut(userId: any): Observable<any> {
+    return this.httpClient.get<any>(this.REST_API_SERVER + 'authentication/clock_out/' + userId + '/')
+  }
+
 
   GetToken() {
     return localStorage.getItem('token') || '';
