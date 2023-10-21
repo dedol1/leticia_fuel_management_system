@@ -8,6 +8,10 @@ import { AttendantDashboardComponent } from './components/attendant/attendant-da
 import { TransporterDashboardComponent } from './components/transport/transporter-dashboard/transporter-dashboard.component';
 import { AuthGuard } from './services/auth/auth-guard.service';
 import { ManageFuelPricesComponent } from './components/admin/manage-fuel-prices/manage-fuel-prices.component';
+import { FuelDippingComponent } from './components/admin/fuel-dipping/fuel-dipping.component';
+import { AdminAttendanceComponent } from './components/admin/admin-attendance/admin-attendance.component';
+import { ManageAllAttendanceComponent } from './components/admin/manage-all-attendance/manage-all-attendance.component';
+import { AttendantsAttendanceComponent } from './components/attendant/attendants-attendance/attendants-attendance.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,6 +25,9 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'manage-users', component: ManageUsersComponent },
       { path: 'manage-fuel-prices', component: ManageFuelPricesComponent },
+      { path: 'manage-fuel-dippings', component: FuelDippingComponent },
+      { path: 'my-attendance', component: AdminAttendanceComponent },
+      { path: 'manage-all-attendance', component: ManageAllAttendanceComponent },
     ]
   },
   {
@@ -29,7 +36,7 @@ const routes: Routes = [
     data: { roles: ['Fuel Attendant'] },
     children: [
       { path: 'dashboard', component: AttendantDashboardComponent },
-      { path: 'manage-users', component: ManageUsersComponent },
+      { path: 'my-attendace', component: AttendantsAttendanceComponent },
     ]
   },
   {

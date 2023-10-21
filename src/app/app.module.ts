@@ -24,6 +24,10 @@ import { TransporterSideNavComponent } from './components/shared/transporter-sid
 import { AttendantSideNavComponent } from './components/shared/attendant-side-nav/attendant-side-nav.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ManageFuelPricesComponent } from './components/admin/manage-fuel-prices/manage-fuel-prices.component';
+import { ManageAllAttendanceComponent } from './components/admin/manage-all-attendance/manage-all-attendance.component';
+import { AdminAttendanceComponent } from './components/admin/admin-attendance/admin-attendance.component';
+import { FuelDippingComponent } from './components/admin/fuel-dipping/fuel-dipping.component';
+import { AttendantsAttendanceComponent } from './components/attendant/attendants-attendance/attendants-attendance.component';
 
 
 @NgModule({
@@ -41,7 +45,11 @@ import { ManageFuelPricesComponent } from './components/admin/manage-fuel-prices
     TransporterDashboardComponent,
     TransporterSideNavComponent,
     AttendantSideNavComponent,
-    ManageFuelPricesComponent
+    ManageFuelPricesComponent,
+    ManageAllAttendanceComponent,
+    AdminAttendanceComponent,
+    FuelDippingComponent,
+    AttendantsAttendanceComponent
   ],
   imports: [
     BrowserModule,

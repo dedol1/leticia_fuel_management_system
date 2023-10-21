@@ -2,28 +2,28 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { FuelDipping } from 'src/app/interfaces/fuel-dipping';
 import { FuelPrice } from 'src/app/interfaces/fuel-price';
 import { selectInterface } from 'src/app/interfaces/utils.interfaces';
 import { userProjectRoles } from 'src/app/models/user-project-role.models';
 import { userRoles } from 'src/app/models/user-roles.models';
 import { DateService } from 'src/app/services/date/date.service';
 import { ManagerService } from 'src/app/services/manager/manager.service';
-import { UserService } from 'src/app/services/users/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-manage-fuel-prices',
-  templateUrl: './manage-fuel-prices.component.html',
-  styleUrls: ['./manage-fuel-prices.component.css']
+  selector: 'app-fuel-dipping',
+  templateUrl: './fuel-dipping.component.html',
+  styleUrls: ['./fuel-dipping.component.css']
 })
-export class ManageFuelPricesComponent implements OnInit {
-  prices!: FuelPrice[];
-  selectedPrice!: FuelPrice;
+export class FuelDippingComponent implements OnInit {
+  dippings!: FuelDipping[];
+  selectedDipping!: FuelDipping;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<FuelPrice>;
-  displayedColumns: string[] = ['rowNumber', 'name', 'diesel', 'superfuel', 'timestamp', 'actions'];
-  dataSource = new MatTableDataSource<FuelPrice>();
+  @ViewChild(MatTable) table!: MatTable<FuelDipping>;
+  displayedColumns: string[] = ['rowNumber', 'name', 'diesel_dipping', 'super_dipping', 'date_time', 'actions'];
+  dataSource = new MatTableDataSource<FuelDipping>();
   diesel = ""
   superfuel = ""
 
@@ -37,21 +37,21 @@ export class ManageFuelPricesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getFuelPrices();
+    this.getFuelDippings();
 
   }
 
 
-  addNewUser() {
+  addNewDippings() {
     const payload = {
       "name": sessionStorage.getItem('username') as string,
-      "diesel": this.diesel,
-      "superfuel": this.superfuel,
+      "diesel_dipping": this.diesel,
+      "super_dipping": this.superfuel,
     }
 
-    this.managerService.createFuelPrice(payload).subscribe({
-      next: (response: FuelPrice) => {
-        Swal.fire('Request Successful!', 'User added successfully', 'success')
+    this.managerService.createFuelDipping(payload).subscribe({
+      next: (response: any) => {
+        Swal.fire('Request Successful!', 'Dipping added successfully', 'success')
           .then((result) => {
             if (result.isConfirmed) {
               window.location.reload();
@@ -66,12 +66,12 @@ export class ManageFuelPricesComponent implements OnInit {
   }
 
 
-  getFuelPrices() {
-    this.managerService.getFuelPrices().subscribe({
-      next: (response: FuelPrice[]) => {
-        this.prices = response;
-        if (this.prices) {
-          this.dataSource.data = this.prices;
+  getFuelDippings() {
+    this.managerService.getAllFuelDippings().subscribe({
+      next: (response: FuelDipping[]) => {
+        this.dippings = response;
+        if (this.dippings) {
+          this.dataSource.data = this.dippings;
           this.dataSource.sort = this.sort;
           this.dataSource.paginator = this.paginator;
           this.table.dataSource = this.dataSource;
@@ -83,6 +83,17 @@ export class ManageFuelPricesComponent implements OnInit {
     })
   }
 
+
+  getFuelDippingById(id: number){
+    this.managerService.getFuelDippingById(id).subscribe({
+      next: (response: FuelDipping) => {
+        this.selectedDipping = response;
+      },
+      error: (error: any) => {
+        this.errorNotification(error.error.message)
+      }
+    })
+  }
 
   updateUser(userId: string) {
 
@@ -106,9 +117,9 @@ export class ManageFuelPricesComponent implements OnInit {
   }
 
 
-  openEditModal(userId: string) {
+  openEditModal(userId: number) {
     // Fetch user data by ID
-    this.getUserById(userId);
+    this.getFuelDippingById(userId);
     const editModal = document.getElementById('editUserModal');
     if (editModal) {
       editModal.classList.add('show');

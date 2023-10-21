@@ -1,0 +1,121 @@
+<div class="page-wrapperr toggled">
+    <app-side-nav></app-side-nav>
+    <main class="page-contentt bg-light">
+        <app-top-nav></app-top-nav>
+        <div class="container-fluid">
+            <div class="layout-specing">
+                <!-- Dashboard Welcoming Section Starts -->
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted mb-1 welcomeBack">Manager
+                        </span>
+                        <h4 class="mb-0">Personal Attendance</h4>
+                    </div>
+
+
+                    <div class="mb-0 position-relative">
+                        <div class="mb-0 position-relative">
+                            <div class="search-bar p-0 d-none d-md-block ms-2">
+                                <a [routerLink]="(['/admin'])">
+                                    <button class="btn btn-sm btn-light backBtnTextSize"><span
+                                            class="uil uil-arrow-left"></span> Back</button>
+                                </a>
+
+                                <button *ngIf="!isClockedIn()" class="btn btn-sm btn-light addOwner" (click)="clockIn()">
+                                    <span class="uil uil-plus"></span> Clock In
+                                  </button>
+                                  <button *ngIf="isClockedIn() || !isClockedOut()" class="btn btn-sm btn-light addOwner" (click)="clockOut()">
+                                    <span class="uil uil-plus"></span> Clock Out
+                                  </button>
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dashboard Welcoming Section Ends -->
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-xl-12 mt-4 mb-3">
+                        <div class="card border-0">
+                            <div class="table-responsive shadow rounded-bottom" data-simplebar>
+                                <div class="mb-0 position-relative">
+                                    <div class="search-bar p-0 d-none d-md-block ms-2">
+                                        <div id="search" class="menu-search mb-0">
+                                            <form role="search" method="get" id="searchform" class="searchform">
+                                                <div>
+                                                    <!-- <span class="uil uil-search searchBarIcon"></span> -->
+                                                    <input type="text" class="form-control border rounded search-c-box"
+                                                        matInput #filterInput (keyup)="applyFilter(filterInput.value)"
+                                                        name="s" id="s" placeholder="Search for attendance...">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- table -->
+                                <div class="mat-elevation-z8 table-responsive card-body tb-card">
+                                    <table mat-table [dataSource]="dataSource" matSort matSortActive="clockout"
+                                        matSortDirection="desc">
+
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="rowNumber">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+                                            <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+                                        </ng-container>
+
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="first_name">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Firstname </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.user.first_name}} </td>
+                                        </ng-container>
+
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="last_name">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Lastname </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.user.last_name}} </td>
+                                        </ng-container>
+
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="email">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.user.email}} </td>
+                                        </ng-container>
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="clockin">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Clockin Timestamp </th>
+                                            <td mat-cell *matCellDef="let element"> {{dateService.formatDateToHumanReadable(element.clockin)}} </td>
+                                        </ng-container>
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="clockout">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Clockout Timestamp </th>
+                                            <td mat-cell *matCellDef="let element"> {{dateService.formatDateToHumanReadable(element.clockout)}} </td>
+                                        </ng-container>
+                                        
+
+
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                    </table>
+
+                                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                                        aria-label="Select page of periodic elements">
+                                    </mat-paginator>
+                                </div>
+
+                                <!-- table end -->
+                            </div>
+
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+            </div>
+        </div>
+        <!-- View Option Modal Content Start -->
+     
+        <!-- Edit Option Modal Content End -->
+        <!-- <app-admin-footer></app-admin-footer> -->
+    </main>
+</div>
