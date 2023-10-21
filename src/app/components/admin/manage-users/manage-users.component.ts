@@ -20,7 +20,7 @@ export class ManageUsersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<User>;
-  displayedColumns: string[] = ['rowNumber', 'first_name', 'last_name', 'email', 'phone_number', 'role', 'actions'];
+  displayedColumns: string[] = ['rowNumber', 'first_name', 'last_name', 'email', 'phone_number', 'role'];
   dataSource = new MatTableDataSource<User>();
   firstname = "";
   lastname = "";

@@ -28,6 +28,7 @@ import { ManageAllAttendanceComponent } from './components/admin/manage-all-atte
 import { AdminAttendanceComponent } from './components/admin/admin-attendance/admin-attendance.component';
 import { FuelDippingComponent } from './components/admin/fuel-dipping/fuel-dipping.component';
 import { AttendantsAttendanceComponent } from './components/attendant/attendants-attendance/attendants-attendance.component';
+import { AttendantSalesComponent } from './components/attendant/attendant-sales/attendant-sales.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AttendantsAttendanceComponent } from './components/attendant/attendants
     ManageAllAttendanceComponent,
     AdminAttendanceComponent,
     FuelDippingComponent,
-    AttendantsAttendanceComponent
+    AttendantsAttendanceComponent,
+    AttendantSalesComponent
   ],
   imports: [
     BrowserModule,
