@@ -12,6 +12,7 @@ import { FuelDippingComponent } from './components/admin/fuel-dipping/fuel-dippi
 import { AdminAttendanceComponent } from './components/admin/admin-attendance/admin-attendance.component';
 import { ManageAllAttendanceComponent } from './components/admin/manage-all-attendance/manage-all-attendance.component';
 import { AttendantsAttendanceComponent } from './components/attendant/attendants-attendance/attendants-attendance.component';
+import { AttendantSalesComponent } from './components/attendant/attendant-sales/attendant-sales.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: AttendantDashboardComponent },
       { path: 'my-attendace', component: AttendantsAttendanceComponent },
+      { path: 'my-sales', component: AttendantSalesComponent },
     ]
   },
   {

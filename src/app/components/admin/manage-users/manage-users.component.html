@@ -88,27 +88,7 @@
                                             <th mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
                                             <td mat-cell *matCellDef="let element"> {{element.role}} </td>
                                         </ng-container>
-                                        <!-- Symbol Column -->
-                                        <ng-container matColumnDef="actions">
-                                            <th mat-header-cell *matHeaderCellDef> Actions </th>
-
-                                            <td class="text-end p-3 actionBtn" mat-cell *matCellDef="let user">
-                                                <button class="btn btn-sm viewOptionBtn"
-                                                    (click)="getUserById(projectId)" data-bs-toggle="modal"
-                                                    data-bs-target="#LoginForrm">
-                                                    <span class="ti ti-eye"></span>
-                                                </button>
-                                                <button id="modalTriggerButton1" class="btn btn-sm editOptionBtn"
-                                                    (click)="openEditModal(user.userId)" data-bs-toggle="modal"
-                                                    data-bs-target="#editUserModal">
-                                                    <span class="uil uil-edit"></span>
-                                                </button>
-                                                <button class="btn btn-sm deleteOptionBtn"
-                                                    (click)="deleteUser(user.userId)">
-                                                    <span class="uil uil-trash-alt"></span>
-                                                </button>
-                                            </td>
-                                        </ng-container>
+                                        
 
 
                                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
